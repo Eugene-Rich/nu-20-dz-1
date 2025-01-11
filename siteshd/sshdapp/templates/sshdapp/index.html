@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <!-- Features section-->
+        <section class="py-5 border-bottom" id="features">
+            <div class="container px-5 my-5">
+                <div class="row gx-5">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                        <h2 class="h4 fw-bolder">Ввод исходных данных</h2>
+                        <p>Для того чтобы поиск заработал ему нужно указать данные.</p>
+                        <a class="text-decoration-none" href="#!">
+                            <a href="{% url 'sshdapp:vvod' %}">Ввести</a>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                        <h2 class="h4 fw-bolder">Просмотр полученных таблиц</h2>
+                        <p>Здесь можно просмотреть полученные данные по шинам.</p>
+                        <a class="text-decoration-none" href="#!">
+                            <a href="{% url 'sshdapp:ftbl' %}">Смотреть</a>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h4 fw-bolder">Инструкция <br>и правила</h2>
+                        <p>И почитать инструкцию по работе с сайтом.</p>
+                        <a class="text-decoration-none" href="#!">
+                            <a href="{% url 'sshdapp:instrp' %}">Смотреть</a>
+                           <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

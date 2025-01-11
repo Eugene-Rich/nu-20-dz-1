@@ -13,15 +13,19 @@ class Command(BaseCommand):
         leto = Sezon.objects.filter(name='Летняя').first()
         if leto == None:
             Sezon.objects.create(name='Летняя')
-            leto = Sezon.objects.filter(name='Летняeeя').first()
+            leto = Sezon.objects.filter(name='Летняя').first()
 
         zima = Sezon.objects.filter(name='Зимняя').first()
         if zima == None:
+            Sezon.objects.create(name='Зимняя')
             zima = Sezon.objects.filter(name='Зимняя').first()
 
         vses = Sezon.objects.filter(name='Всесезонная').first()
         if vses == None:
+            Sezon.objects.create(name='Всесезонная')
             vses = Sezon.objects.filter(name='Всесезонная').first()
+
+        print(leto, zima, vses)
 
         # Заполнение размеров и товаров с остатками
 

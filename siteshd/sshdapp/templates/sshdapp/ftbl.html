@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+        <!-- Features section-->
+        <section class="py-5 border-bottom" id="features">
+            <div class="container px-5 my-5">
+                <div class="row gx-5">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                        <h2 class="h4 fw-bolder">Просмотр полученных таблиц</h2>
+                        <a class="text-decoration-none" href="#!">
+                            <a href="{% url 'sshdapp:index' %}">На главную</a>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+
+<!--table - таблица, tr-строка, td-столбец, th-заголовок-->
+
+                    <table>
+
+
+
+                        <tr>
+                            <th> Название </th>
+                            <th> Цена </th>
+                        </tr>
+
+                        {% for ils in lstsh %}
+
+
+                        <tr>
+                            <td>{{ ils.name }}</td>
+                            <td>{{ ils.cena }}</td>
+                        </tr>
+
+                        {% endfor %}
+
+                        </table>
+
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
