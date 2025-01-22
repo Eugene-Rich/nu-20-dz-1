@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <!-- Features section-->
+        <section class="py-5 border-bottom" id="features">
+            <div class="container px-5 my-5">
+                <div class="row gx-5">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                        <h2 class="h4 fw-bolder">Ввод исходных данных</h2>
+                        <a class="text-decoration-none" href="#!">
+                            <a href="/">На главную.</a>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+
+                    <h2>Укажите данные для подбора</h2>
+                    <form method="post" action="{% url 'sshdapp:ftbl' %}">
+                        {% csrf_token %}
+                        <p>Сезонность:<br> <input name="f_sez" /></p>
+                        <p>Размер:<br> <input name="f_razm" /></p>
+                        <input type="submit" value="Send" />
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
