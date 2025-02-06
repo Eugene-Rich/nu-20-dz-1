@@ -1,47 +1,44 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-
-        <!-- Features section-->
-        <section class="py-5 border-bottom" id="features">
-            <div class="container px-5 my-5">
-                <div class="row gx-5">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                        <h2 class="h4 fw-bolder">Просмотр полученных таблиц</h2>
-                        <a class="text-decoration-none" href="#!">
-                            <a href="{% url 'sshdapp:index' %}">На главную</a>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 mb-5 mb-lg-0">
+<html>
+<head>Список шин</head>
+    <body>
+    <title>Список шин</title>
 
 <!--table - таблица, tr-строка, td-столбец, th-заголовок-->
 
-                    <table>
-
-
+                    <table> <table cellspacing=5><table border=5>
 
                         <tr>
+                            <th> № п/п </th>
                             <th> Название </th>
                             <th> Цена </th>
+                            <th> Сезонность </th>
+                            <th> Шипы </th>
+                            <th> УИН </th>
                         </tr>
 
-                        {% for ils in lstsh %}
-
+                        {% for item in object_list %}
 
                         <tr>
-                            <td>{{ ils.name }}</td>
-                            <td>{{ ils.cena }}</td>
+                            <td>{{ forloop.counter }} </td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.cena }}</td>
+                            <td>{{ item.sezonnost }}</td>
+                            <td>{{ item.ship }}</td>
+                            <td>{{ item.uin }}</td>
+
+                            <td><a href="{% url 'sshdapp:instrp' uin=item.uin %}">Просмотреть</a></td>
+
                         </tr>
 
                         {% endfor %}
 
                         </table>
 
-                </div>
-            </div>
-        </section>
 
-{% endblock %}
+
+
+
+        <a href="{% url 'sshdapp:index' %}">На главную</a>
+
+    </body>
+</html>
