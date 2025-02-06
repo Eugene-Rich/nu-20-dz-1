@@ -1,5 +1,7 @@
 from django.core.management.base import BaseCommand
 from sshdapp.models import Sezon, Razm, Tovost
+from django.conf import settings
+import os
 
 
 # from blogapp.models import Poll
@@ -29,7 +31,11 @@ class Command(BaseCommand):
 
         # Заполнение размеров и товаров с остатками
 
-        file = open("dann.txt", "r")
+        ptf = os.path.join(settings.BASE_DIR, "dann.txt")
+        print(ptf)
+        print('+')
+
+        file = open(ptf, "r")
         while True:
             sttf = file.readline()
             if not sttf:

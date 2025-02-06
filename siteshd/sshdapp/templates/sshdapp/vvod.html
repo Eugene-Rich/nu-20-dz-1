@@ -17,11 +17,13 @@
                     <div class="col-lg-4 mb-5 mb-lg-0">
 
                     <h2>Укажите данные для подбора</h2>
-                    <form method="post" action="{% url 'sshdapp:ftbl' %}">
+<!--                    <form method="get" action="{% url 'sshdapp:ftbl' sez='Летняя&15 195 65' %}">
+-->
+                    <form method="get" action="{% url 'sshdapp:ftbl' sez=' ' %}">
                         {% csrf_token %}
-                        <p>Сезонность:<br> <input name="f_sez" /></p>
-                        <p>Размер:<br> <input name="f_razm" /></p>
-                        <input type="submit" value="Send" />
+                        <p>Сезонность:<br> <input name='f_sez' /></p>
+                        <p>Размер:<br> <input name='f_razm' /></p>
+                        <input type="submit" value="Найти" />
                     </form>
 
                 </div>

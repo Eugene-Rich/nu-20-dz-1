@@ -1,23 +1,73 @@
-{% extends "base.html" %}
+<html>
+<head>Данные о шине</head>
+    <body>
+    <title>Карточка товара</title>
 
-{% block content %}
 
-        <!-- Features section-->
-        <section class="py-5 border-bottom" id="features">
-            <div class="container px-5 my-5">
-                <div class="row gx-5">
-                    <div class="col-lg-4">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                        <h2 class="h4 fw-bolder">Инструкция и правила</h2>
-                        <p>п.1. Программист всегда прав. </p>
-                        <p>п.2. Если программист не прав, то см. п.1. </p>
-                        <a class="text-decoration-none" href="#!">
-                            <a href="{% url 'sshdapp:index' %}">На главную</a>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!--
+        <dl>
+            <dt>{{ uin }}</dt>
+            <dd>Наименование : {{ object.name }}</dd>
+            <dd>Шипы : {{ object.ship }}</dd>
+            <dd>Цена : {{ object.cena }}</dd>
+            <dd>Остаток : {{ object.ostatok }}</dd>
+        </dl>
 
-{% endblock %}
+        -->
+
+        <table> <table cellspacing=5><table border=5>
+        <tr>
+            <td>Наименование</td>
+            <td>{{ object.name  }}</td>
+        </tr>
+        <tr>
+            <td>Размер</td>
+            <td>{{ object.razmer  }}</td>
+        </tr>
+        <tr>
+            <td>Сезонность</td>
+            <td>{{ object.sezonnost }}</td>
+        </tr>
+        <tr>
+            <td>Шипы</td>
+            <td>{{ object.ship }}</td>
+        </tr>
+        <tr>
+            <td>УИН</td>
+            <td>{{ object.uin }}</td>
+        </tr>
+        <tr>
+            <td>Цена</td>
+            <td>{{ object.cena }}</td>
+        </tr>
+        <tr>
+            <td>Остаток</td>
+            <td>{{ object.ostatok }}</td>
+        </tr>
+        <tr>
+            <td>Описание</td>
+            <td>{{ object.descriptions }}</td>
+        </tr>
+        <tr>
+            <td>Адрес картинки</td>
+            <td>{{ object.kartss }}</td>
+        </tr>
+        <tr>
+            <td>Картинка</td>
+            <td>
+
+            <img src="{{ object.kartss }}" alt="Картинка" width="300">
+
+
+
+            </td>
+
+        </tr>
+
+
+        </table>
+
+        <a href="{% url 'sshdapp:index' %}">На главную</a>
+
+    </body>
+</html>
